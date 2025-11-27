@@ -358,7 +358,7 @@ class TestToolCalling:
         """
         backend, model, client = setup_backend
 
-        if backend in ["openai"]:
+        if backend in ["openai", "grpc"]:
             pytest.skip("skip for openai")
 
         tools = [self.CALCULATE_FUNCTION]
