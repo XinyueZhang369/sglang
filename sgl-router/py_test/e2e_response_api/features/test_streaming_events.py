@@ -88,18 +88,15 @@ class TestStreamingEvents:
             output_array
         ), "Number of output_item.added events should match output array length"
 
-
-@pytest.mark.parametrize("setup_backend", ["grpc_harmony"], indirect=True)
-class TestHarmonyStreamingEvents:
-    """Tests for Harmony-specific streaming events (reasoning content)."""
-
     def test_reasoning_content(self, setup_backend):
         """
         Test that reasoning content has correct zero-based output_index.
         Specifically tests that reasoning item has output_index: 0
         and message item has output_index: 1.
         """
-        _, model, client = setup_backend
+        backend, model, client = setup_backend
+        if backend in ["grpc"]:
+            pytest.skip("skip test_reasoning_content for grpc")
 
         resp = client.responses.create(
             model=model,

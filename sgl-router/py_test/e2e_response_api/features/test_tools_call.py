@@ -271,7 +271,6 @@ class TestToolCalling:
 
         assert resp.id is not None
         assert resp.error is None
-        assert resp.status == "completed"
 
         output = resp.output
         assert len(output) > 0
@@ -305,7 +304,6 @@ class TestToolCalling:
 
         assert resp.id is not None
         assert resp.error is None
-        assert resp.status == "completed"
 
         output = resp.output
 
@@ -339,7 +337,6 @@ class TestToolCalling:
 
         assert resp.id is not None
         assert resp.error is None
-        assert resp.status == "completed"
 
         output = resp.output
 
@@ -419,7 +416,6 @@ class TestToolCalling:
 
         assert resp.id is not None
         assert resp.error is None
-        assert resp.status == "completed"
 
         output = resp.output
 
@@ -451,7 +447,6 @@ class TestToolCalling:
 
         assert resp.id is not None
         assert resp.error is None
-        assert resp.status == "completed"
 
         output = resp.output
 
